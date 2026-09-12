@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Services & Pricing | 626 Consulting</title>
+
+  <meta
+    name="description"
+    content="Private services and pricing guide for 626 Consulting."
+  >
+
+  <meta name="robots" content="noindex, nofollow">
+
+  <style>
+    :root {
+      --emerald: #004C3F;
+      --emerald-dark: #00362D;
+      --emerald-light: #08735F;
+
+      --gold: #C9A227;
+      --gold-light: #E2C467;
+
+      --burgundy: #7A1632;
+      --burgundy-dark: #5C1025;
+
+      --black: #111111;
+      --charcoal: #282828;
+      --white: #FFFFFF;
+      --off-white: #F8F7F3;
+      --gray: #6D6D6D;
+      --border: #E5E2DA;
+
+      --max-width: 1180px;
+      --radius: 18px;
+      --shadow: 0 12px 35px rgba(0,0,0,.10);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-wrap {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .header-logo {
+      width: 185px;
+      height: auto;
+    }
+
+    .back-link {
+      font-weight: 700;
+      color: var(--emerald);
+      border: 2px solid var(--emerald);
+      padding: 10px 18px;
+      border-radius: 30px;
+      transition: .2s ease;
+    }
+
+    .back-link:hover {
+      background: var(--emerald);
+      color: var(--white);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      background:
+        radial-gradient(circle at 80% 20%, rgba(201,162,39,.18), transparent 28%),
+        linear-gradient(135deg, #ffffff 0%, #faf9f5 55%, #f2efe7 100%);
+      padding: 95px 0 85px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--burgundy);
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 72px);
+      line-height: 1.03;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      color: var(--emerald);
+    }
+
+    .hero-text {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--gray);
+      font-size: 18px;
+    }
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .section-kicker {
+      color: var(--burgundy);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(34px, 4vw, 48px);
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+
+    .section-copy {
+      color: var(--gray);
+      font-size: 18px;
+    }
+
+    /* =========================
+       PRICING CARDS
+    ========================= */
+
+    .pricing-section {
+      background: var(--white);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .price-card {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 34px;
+      background: var(--white);
+      position: relative;
+      transition: .25s ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: transparent;
+    }
+
+    .price-card.featured {
+      border: 2px solid var(--emerald);
+      transform: scale(1.02);
+    }
+
+    .price-card.featured:hover {
+      transform: scale(1.02) translateY(-6px);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--emerald);
+      color: var(--white);
+      padding: 7px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+    }
+
+    .price-card h2 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--emerald);
+      margin-bottom: 18px;
+      line-height: 1.1;
+    }
+
+    .price span {
+      display: block;
+      color: var(--gray);
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+
+    .price-card p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .price-card ul {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .price-card li {
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      color: #4E4E4E;
+    }
+
+    .price-card li:last-child {
+      border-bottom: none;
+    }
+
+    .price-card li::before {
+      content: "✓";
+      color: var(--emerald);
+      font-weight: 800;
+      margin-right: 10px;
+    }
+
+    /* =========================
+       SECONDARY PRICING
+    ========================= */
+
+    .secondary {
+      background: var(--off-white);
+    }
+
+    .secondary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .secondary-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 30px;
+      border-top: 4px solid var(--gold);
+    }
+
+    .secondary-card:nth-child(2) {
+      border-top-color: var(--burgundy);
+    }
+
+    .secondary-card:nth-child(3) {
+      border-top-color: var(--emerald);
+    }
+
+    .secondary-card h3 {
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .secondary-price {
+      color: var(--emerald);
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .secondary-card p {
+      color: var(--gray);
+      font-size: 15px;
+    }
+
+    /* =========================
+       NOTE
+    ========================= */
+
+    .pricing-note {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .note-box {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .note-box h2 {
+      font-size: clamp(34px, 4vw, 48px);
+      margin-bottom: 20px;
+    }
+
+    .note-box p {
+      color: #C8C8C8;
+      font-size: 17px;
+      margin-bottom: 16px;
+    }
+
+    .note-box strong {
+      color: var(--gold-light);
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(201,162,39,.18), transparent 24%),
+        linear-gradient(135deg, var(--emerald-dark), var(--emerald));
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(38px, 5vw, 56px);
+      margin-bottom: 18px;
+      line-height: 1.05;
+    }
+
+    .cta p {
+      max-width: 760px;
+      margin: 0 auto 30px;
+      color: #E2E8E5;
+      font-size: 18px;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 40px;
+      font-weight: 700;
+      transition: .25s ease;
+      border: 2px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--burgundy);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .btn-secondary {
+      border-color: var(--white);
+      color: var(--white);
+    }
+
+    .btn-secondary:hover {
+      background: var(--white);
+      color: var(--emerald);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #080808;
+      color: #C9C9C9;
+      padding: 35px 0;
+      text-align: center;
+    }
+
+    .footer-brand {
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    footer p {
+      font-size: 13px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 900px) {
+      .pricing-grid,
+      .secondary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+
+      .price-card.featured:hover {
+        transform: translateY(-6px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-logo {
+        width: 145px;
+      }
+
+      .header-wrap {
+        min-height: 76px;
+      }
+
+      .back-link {
+        font-size: 13px;
+        padding: 8px 14px;
+      }
+
+      section {
+        padding: 68px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-wrap">
+
+      <a href="index.html">
+        <img
+          src="626logo.png"
+          alt="626 Consulting"
+          class="header-logo"
+        >
+      </a>
+
+      <a href="index.html" class="back-link">
+        Back to Main Site
+      </a>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        626 Consulting
+      </div>
+
+      <h1>
+        Services & <span>Pricing</span>
+      </h1>
+
+      <p class="hero-text">
+        Flexible consulting options designed for small businesses
+        that need practical technology, implementation, operational,
+        and ongoing support.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- MAIN PRICING -->
+  <section class="pricing-section">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="section-kicker">
+          Ways to Work Together
+        </div>
+
+        <h2 class="section-title">
+          Choose the support that fits your business
+        </h2>
+
+        <p class="section-copy">
+          Every business is different. These options provide a starting
+          point while allowing the scope and support level to be tailored
+          to your needs.
+        </p>
+
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- CONSULTING -->
+        <div class="price-card">
+
+          <h2>
+            Consulting
+          </h2>
+
+          <div class="price">
+            $85
+            <span>per hour</span>
+          </div>
+
+          <p>
+            Best for focused support, troubleshooting, guidance,
+            configuration, training, and smaller technology or
+            operational needs.
+          </p>
+
+          <ul>
+            <li>Technology consulting</li>
+            <li>Business operations support</li>
+            <li>Troubleshooting</li>
+            <li>Software configuration</li>
+            <li>Website updates</li>
+            <li>Training and guidance</li>
+          </ul>
+
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="price-card featured">
+
+          <div class="badge">
+            Most Flexible
+          </div>
+
+          <h2>
+            Project-Based Services
+          </h2>
+
+          <div class="price">
+            $750+
+            <span>starting project rate</span>
+          </div>
+
+          <p>
+            Best for clearly defined projects that require planning,
+            setup, configuration, implementation, testing, and completion.
+          </p>
+
+          <ul>
+            <li>Website improvement projects</li>
+            <li>Software implementation</li>
+            <li>Business system setup</li>
+            <li>Booking or rental systems</li>
+            <li>Workflow improvements</li>
+            <li>Integrations and configuration</li>
+          </ul>
+
+        </div>
+
+        <!-- MONTHLY SUPPORT -->
+        <div class="price-card">
+
+          <h2>
+            Ongoing Support
+          </h2>
+
+          <div class="price">
+            $750+
+            <span>per month</span>
+          </div>
+
+          <p>
+            For businesses that want continued access to technology
+            and operations support without hiring a full internal team.
+          </p>
+
+          <ul>
+            <li>Ongoing technology support</li>
+            <li>Website maintenance</li>
+            <li>Software assistance</li>
+            <li>Operational improvements</li>
+            <li>Customer workflow support</li>
+            <li>Regular consulting access</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SPECIALIZED PRICING -->
+  <section class="secondary">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="section-kicker">
+          Additional Options
+        </div>
+
+        <h2 class="section-title">
+          Specialized & priority support
+        </h2>
+
+      </div>
+
+      <div class="secondary-grid">
+
+        <div class="secondary-card">
+
+          <h3>
+            Initial Consultation
+          </h3>
+
+          <div class="secondary-price">
+            Complimentary
+          </div>
+
+          <p>
+            A short introductory conversation to discuss your business,
+            what you need help with, and whether 626 Consulting is a
+            good fit for the project.
+          </p>
+
+        </div>
+
+        <div class="secondary-card">
+
+          <h3>
+            Advanced Consulting
+          </h3>
+
+          <div class="secondary-price">
+            $115/hour
+          </div>
+
+          <p>
+            For more complex technology, implementation, system,
+            integration, workflow, and operational consulting needs.
+          </p>
+
+        </div>
+
+        <div class="secondary-card">
+
+          <h3>
+            Priority Support
+          </h3>
+
+          <div class="secondary-price">
+            $140/hour
+          </div>
+
+          <p>
+            For urgent or priority assistance requiring accelerated
+            response, scheduling, or support outside normal project flow.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PRICING NOTES -->
+  <section class="pricing-note">
+
+    <div class="container note-box">
+
+      <h2>
+        Every project starts with the scope.
+      </h2>
+
+      <p>
+        The prices shown on this page are starting rates.
+        Final pricing may vary based on the complexity of the work,
+        number of systems involved, integrations, timeline,
+        support requirements, and project scope.
+      </p>
+
+      <p>
+        Projects with a clearly defined scope may be quoted at a
+        <strong>fixed project price</strong> rather than billed hourly.
+      </p>
+
+      <p>
+        Any project pricing, monthly support arrangement, or specialized
+        engagement will be discussed and approved before work begins.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>
+        Not sure which option fits?
+      </h2>
+
+      <p>
+        Start with a conversation. Tell me what's happening in your
+        business, what you're trying to accomplish, and where you're
+        getting stuck. I'll review the scope and recommend the best
+        approach before any work begins.
+      </p>
+
+      <div class="button-row">
+
+        <a
+          href="mailto:brandy@626consulting.com?subject=626%20Consulting%20Consultation"
+          class="btn btn-primary"
+        >
+          Request a Consultation
+        </a>
+
+        <a
+          href="mailto:brandy@626consulting.com"
+          class="btn btn-secondary"
+        >
+          Email Brandy
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-brand">
+        626 Consulting
+      </div>
+
+      <p>
+        Small Business Technology & Operations
+      </p>
+
+      <p>
+        © 2026 626 Consulting. All Rights Reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
