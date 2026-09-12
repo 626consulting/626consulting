@@ -269,7 +269,7 @@
     }
 
     /* =========================
-       GENERAL SECTIONS
+       GENERAL
     ========================= */
 
     section {
@@ -371,7 +371,7 @@
     }
 
     /* =========================
-       ABOUT
+       ABOUT BRANDY
     ========================= */
 
     .about {
@@ -380,51 +380,80 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: .85fr 1.15fr;
       gap: 65px;
       align-items: center;
     }
 
     .about-box {
-      background: var(--emerald-dark);
+      background:
+        linear-gradient(145deg, var(--emerald-dark), var(--emerald));
       color: var(--white);
       border-radius: 26px;
       padding: 48px;
-      min-height: 410px;
+      min-height: 470px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       position: relative;
       overflow: hidden;
+      box-shadow: var(--shadow);
     }
 
     .about-box::after {
       content: "";
       position: absolute;
-      width: 180px;
-      height: 180px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       background: var(--burgundy);
-      right: -90px;
-      bottom: -90px;
+      right: -100px;
+      bottom: -105px;
       opacity: .55;
     }
 
+    .about-box::before {
+      content: "";
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: var(--gold);
+      left: -70px;
+      top: -65px;
+      opacity: .18;
+    }
+
     .about-box .large-number {
-      font-size: 72px;
+      font-size: 78px;
       color: var(--gold);
       font-weight: 800;
       line-height: 1;
     }
 
     .about-box h3 {
-      font-size: 24px;
-      margin: 10px 0 18px;
+      font-size: 25px;
+      margin: 12px 0 18px;
+      max-width: 420px;
     }
 
     .about-box p {
       position: relative;
       z-index: 1;
+      color: #E8EFEC;
+    }
+
+    .owner-name {
+      font-size: 27px;
+      font-weight: 800;
+      color: var(--emerald);
+      margin-bottom: 4px;
+    }
+
+    .owner-role {
+      color: var(--burgundy);
+      font-weight: 700;
+      margin-bottom: 23px;
     }
 
     .about-content p {
@@ -434,8 +463,73 @@
     }
 
     /* =========================
-       WHY US
+       REAL WORLD SOLUTIONS
     ========================= */
+
+    .solutions {
+      background: var(--white);
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .solution-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 30px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      transition: .25s ease;
+      background: var(--white);
+    }
+
+    .solution-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-4px);
+    }
+
+    .solution-check {
+      min-width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--emerald);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      margin-top: 2px;
+    }
+
+    .solution-card:nth-child(3n+2) .solution-check {
+      background: var(--burgundy);
+    }
+
+    .solution-card:nth-child(3n+3) .solution-check {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .solution-card h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .solution-card p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* =========================
+       WHY 626
+    ========================= */
+
+    .why-section {
+      background: var(--off-white);
+    }
 
     .why-grid {
       display: grid;
@@ -447,7 +541,7 @@
       text-align: center;
       padding: 30px 22px;
       border-radius: var(--radius);
-      background: var(--off-white);
+      background: var(--white);
       border-top: 4px solid var(--gold);
     }
 
@@ -532,6 +626,7 @@
 
     .contact {
       background:
+        radial-gradient(circle at 85% 20%, rgba(201,162,39,.18), transparent 24%),
         linear-gradient(
           135deg,
           var(--emerald-dark),
@@ -542,8 +637,8 @@
 
     .contact-wrap {
       display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 50px;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 55px;
       align-items: center;
     }
 
@@ -557,29 +652,57 @@
       font-size: 18px;
       color: #E4E9E7;
       max-width: 650px;
+      margin-bottom: 17px;
+    }
+
+    .contact-highlight {
+      color: var(--gold-light);
+      font-weight: 700;
+      font-size: 20px;
     }
 
     .contact-details {
       background: var(--white);
       color: var(--black);
-      padding: 32px;
+      padding: 34px;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
 
+    .contact-details h3 {
+      color: var(--emerald);
+      margin-bottom: 18px;
+      font-size: 22px;
+    }
+
     .contact-details a {
       display: block;
-      padding: 12px 0;
+      padding: 13px 0;
       border-bottom: 1px solid var(--border);
       font-weight: 600;
     }
 
-    .contact-details a:last-child {
+    .contact-details a:last-of-type {
       border-bottom: none;
     }
 
     .contact-details a:hover {
       color: var(--burgundy);
+    }
+
+    .contact-button {
+      display: block;
+      margin-top: 22px;
+      text-align: center;
+      background: var(--burgundy);
+      color: var(--white);
+      padding: 14px 18px;
+      border-radius: 40px;
+      font-weight: 700;
+    }
+
+    .contact-button:hover {
+      background: var(--emerald);
     }
 
     /* =========================
@@ -636,6 +759,10 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .solutions-grid {
+        grid-template-columns: 1fr;
+      }
+
       .why-grid,
       .steps {
         grid-template-columns: repeat(2, 1fr);
@@ -682,6 +809,11 @@
 
       .about-box {
         padding: 34px;
+        min-height: auto;
+      }
+
+      .solution-card {
+        padding: 24px;
       }
 
       .footer-wrap {
@@ -713,6 +845,7 @@
       <nav>
         <a href="#services">Services</a>
         <a href="#about">About</a>
+        <a href="#solutions">Solutions</a>
         <a href="#process">How It Works</a>
         <a href="#contact" class="nav-button">Let's Talk</a>
       </nav>
@@ -748,7 +881,7 @@
 
         <div class="button-row">
           <a href="#contact" class="btn btn-primary">
-            Schedule a Conversation
+            Start a Conversation
           </a>
 
           <a href="#services" class="btn btn-secondary">
@@ -775,15 +908,16 @@
     <div class="container">
 
       <div class="section-head center">
-        <div class="section-kicker">What We Do</div>
+        <div class="section-kicker">What 626 Consulting Does</div>
 
         <h2 class="section-title">
           Practical technology solutions for small businesses
         </h2>
 
         <p class="section-copy">
-          From software setup to customer workflows, we help you build
-          systems that make running your business easier.
+          From software setup to customer workflows, 626 Consulting
+          helps businesses build systems that make everyday operations
+          easier and more efficient.
         </p>
       </div>
 
@@ -872,7 +1006,7 @@
   </section>
 
 
-  <!-- ABOUT -->
+  <!-- ABOUT BRANDY -->
   <section class="about" id="about">
     <div class="container about-grid">
 
@@ -883,13 +1017,13 @@
         </div>
 
         <h3>
-          Years of Technology, Support & Customer Experience
+          Years of Technology, Support, Customer Experience & Operations
         </h3>
 
         <p>
-          Practical experience supporting customers,
-          employees, technology platforms, onboarding,
-          troubleshooting, training, and business operations.
+          Experience supporting customers, employees, technology
+          platforms, implementation, onboarding, troubleshooting,
+          training, and business operations.
         </p>
 
       </div>
@@ -898,33 +1032,51 @@
       <div class="about-content">
 
         <div class="section-kicker">
-          About 626 Consulting
+          Meet the Owner
+        </div>
+
+        <div class="owner-name">
+          Brandy Riggins
+        </div>
+
+        <div class="owner-role">
+          Owner | Technology & Operations Consultant
         </div>
 
         <h2 class="section-title">
-          Your technology should make business easier — not harder.
+          Helping businesses solve problems and make technology easier.
         </h2>
 
         <p>
-          Small business owners often find themselves managing
-          websites, software, email, customer systems, payments,
-          scheduling, and technology without having an internal
-          technology team.
+          I created 626 Consulting to help small business owners
+          manage the technology and operational challenges that often
+          come with running and growing a business.
         </p>
 
         <p>
-          That's where 626 Consulting comes in.
+          My background includes more than 20 years of experience
+          across technical support, customer service, onboarding,
+          implementation, training, customer success, troubleshooting,
+          and business operations.
         </p>
 
         <p>
-          We help businesses identify what isn't working,
-          configure the right tools, improve existing systems,
-          and create practical processes that save time and
-          improve the customer experience.
+          I understand that most business owners do not have time to
+          become experts in websites, software, email systems,
+          analytics, customer platforms, payment tools, and technical
+          troubleshooting. My role is to help make those systems
+          easier to understand, easier to manage, and more useful
+          to your business.
+        </p>
+
+        <p>
+          Whether the problem is technical, operational, or somewhere
+          in between, 626 Consulting starts by understanding what you
+          need and finding a practical path forward.
         </p>
 
         <a href="#contact" class="btn btn-primary">
-          Let's Talk About Your Business
+          Talk With Brandy
         </a>
 
       </div>
@@ -933,8 +1085,179 @@
   </section>
 
 
+  <!-- REAL WORLD SOLUTIONS -->
+  <section class="solutions" id="solutions">
+    <div class="container">
+
+      <div class="section-head center">
+
+        <div class="section-kicker">
+          Real-World Solutions
+        </div>
+
+        <h2 class="section-title">
+          The kind of work businesses actually need help with
+        </h2>
+
+        <p class="section-copy">
+          Not every business problem fits neatly into one category.
+          626 Consulting helps connect the pieces and get things working.
+        </p>
+
+      </div>
+
+
+      <div class="solutions-grid">
+
+        <div class="solution-card">
+          <div class="solution-check">✓</div>
+
+          <div>
+            <h3>Website Updates & Improvements</h3>
+
+            <p>
+              Updating pages, services, pricing, forms, content,
+              layouts, customer information, and website functionality.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="solution-card">
+          <div class="solution-check">✓</div>
+
+          <div>
+            <h3>Business Email & User Setup</h3>
+
+            <p>
+              Setting up professional email, users, permissions,
+              aliases, forwarding, and account access.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="solution-card">
+          <div class="solution-check">✓</div>
+
+          <div>
+            <h3>Booking & Rental Systems</h3>
+
+            <p>
+              Configuring inventory, pricing, rental periods,
+              online booking, checkout options, and customer workflows.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="solution-card">
+          <div class="solution-check">✓</div>
+
+          <div>
+            <h3>Software Configuration</h3>
+
+            <p>
+              Setting up business software and making sure systems
+              are configured to support the way your business operates.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="solution-card">
+          <div class="solution-check">✓</div>
+
+          <div>
+            <h3>Payments & Integrations</h3>
+
+            <p>
+              Helping connect payment tools, online systems,
+              customer platforms, and other business technology.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="solution-card">
+          <div class="solution-check">✓</div>
+
+          <div>
+            <h3>Google Business & Analytics</h3>
+
+            <p>
+              Improving Google Business Profile setup and configuring
+              tools such as Google Analytics and Search Console.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="solution-card">
+          <div class="solution-check">✓</div>
+
+          <div>
+            <h3>Customer Experience Improvements</h3>
+
+            <p>
+              Improving onboarding, communication, forms,
+              scheduling, follow-up, and customer processes.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="solution-card">
+          <div class="solution-check">✓</div>
+
+          <div>
+            <h3>Troubleshooting & Technical Support</h3>
+
+            <p>
+              Identifying problems, resolving technical issues,
+              and helping business owners understand what happened
+              and how to move forward.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="solution-card">
+          <div class="solution-check">✓</div>
+
+          <div>
+            <h3>Training & Documentation</h3>
+
+            <p>
+              Helping owners and employees understand new systems,
+              workflows, tools, and processes.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="solution-card">
+          <div class="solution-check">✓</div>
+
+          <div>
+            <h3>Ongoing Technology Support</h3>
+
+            <p>
+              Continued assistance for businesses that need reliable
+              technology and operations support without hiring a
+              full internal team.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
   <!-- WHY 626 -->
-  <section>
+  <section class="why-section">
     <div class="container">
 
       <div class="section-head center">
@@ -1013,8 +1336,8 @@
         </h2>
 
         <p class="section-copy">
-          We start by understanding your business before recommending
-          technology or making changes.
+          626 Consulting starts by understanding your business before
+          recommending technology or making changes.
         </p>
 
       </div>
@@ -1023,58 +1346,50 @@
       <div class="steps">
 
         <div class="step">
-
           <div class="step-number">01</div>
 
           <h3>Discover</h3>
 
           <p>
-            We discuss your business, current systems,
+            We talk about your business, current systems,
             challenges, and goals.
           </p>
-
         </div>
 
 
         <div class="step">
-
           <div class="step-number">02</div>
 
           <h3>Plan</h3>
 
           <p>
-            We identify the best approach and prioritize
-            the work that will have the greatest impact.
+            I identify the best approach and prioritize
+            the work that can make the biggest difference.
           </p>
-
         </div>
 
 
         <div class="step">
-
           <div class="step-number">03</div>
 
           <h3>Implement</h3>
 
           <p>
-            We configure, improve, troubleshoot, and
-            implement your technology and workflows.
+            I configure, improve, troubleshoot, and implement
+            the technology and workflows your business needs.
           </p>
-
         </div>
 
 
         <div class="step">
-
           <div class="step-number">04</div>
 
           <h3>Support</h3>
 
           <p>
-            We provide training, guidance, and ongoing
-            support as your business evolves.
+            I provide training, guidance, and ongoing support
+            as your business continues to evolve.
           </p>
-
         </div>
 
       </div>
@@ -1095,19 +1410,38 @@
         </div>
 
         <h2>
-          Ready to make technology work better for your business?
+          Not sure what service you need? That's okay.
         </h2>
 
+        <p class="contact-highlight">
+          Tell me what's happening in your business.
+        </p>
+
         <p>
-          Tell us what you're working on, what's not working,
-          or where you need help. We'll start with a conversation
-          about your business and your goals.
+          Maybe something isn't working correctly. Maybe you're
+          spending too much time trying to manage technology.
+          Maybe you need help setting up a new system or improving
+          a process that has become frustrating.
+        </p>
+
+        <p>
+          You don't need to know the technical name for the problem.
+          Start by telling me what's going on, what you're trying to
+          accomplish, and where you're getting stuck.
+        </p>
+
+        <p>
+          We'll start there.
         </p>
 
       </div>
 
 
       <div class="contact-details">
+
+        <h3>
+          Start a Conversation
+        </h3>
 
         <a href="mailto:brandy@626consulting.com">
           Email: brandy@626consulting.com
@@ -1119,6 +1453,13 @@
 
         <a href="https://626consulting.com">
           Website: 626consulting.com
+        </a>
+
+        <a
+          href="mailto:brandy@626consulting.com?subject=626%20Consulting%20Inquiry"
+          class="contact-button"
+        >
+          Email Brandy
         </a>
 
       </div>
